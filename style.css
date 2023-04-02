@@ -1,0 +1,189 @@
+@import url("https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation:wght@500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  user-select: none;
+  font-weight: 800;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  background-color: hsl(66, 81%, 68%);
+  position: relative;
+}
+
+.quiz_container {
+  position: relative;
+  width: 690px;
+  height: 550px;
+  border-radius: 10px;
+  background-color: #b9fca1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+  position: relative;
+}
+
+.question-section {
+	padding: 20px 20px 20px 20px;
+  display: flex;
+  justify-content: space-around;
+  width: 66%;
+  background-color: #b9f;
+  margin-top: 60px;
+  border-radius: 10px;
+}
+
+.question-section::before {
+  position: absolute;
+  top: 10px;
+  left: 55px;
+}
+
+span {
+  font-size: 40px;
+  color: #efed40;
+  height: 60px;
+  width: 60px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: zoom-in;
+}
+
+.answers-section {
+  width: 100%;
+  /* border: 2px solid rgba(64, 64, 64, 0.933); */
+  padding: 20px;
+  border-radius: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 30px;
+}
+
+.answers-section::before {
+  /* content: "Answer is:"; */
+  position: absolute;
+  top: 169px;
+}
+
+button {
+	background-color: #b9f;
+  color: #25ff58;
+  border: 4px solid #e8fb3b;
+  border-radius: 8px;
+  padding: 15px;
+  font-size: 35px;
+  cursor: pointer;
+  transition: 0.2s ease-in all;
+}
+
+button:active {
+  scale: 0.78;
+}
+
+/* add in js file */
+
+.correct {
+  background-color: aquamarine;
+}
+
+.failed {
+  background-color: crimson;
+  color: #fff;
+}
+
+/* message style */
+
+.messages,
+.result {
+	color: rgb(188, 103, 142);
+  display: flex;
+  width: 690px;
+  justify-content: space-around;
+  padding: 20px;
+  background-color: rgb(210, 248, 216);
+  border-radius: 10px;
+  font-size: 20px;
+  margin-top: 100px;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  position: absolute;
+  z-index: 1;
+  top: 0px;
+  margin-top: 58px;
+}
+
+.result {
+  background-color: antiquewhite;
+}
+
+.overlay button {
+  background-color: antiquewhite;
+}
+
+.overlay,
+.startGameOverlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: rgba(240,255, 255, 0.868);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+  z-index: 2;
+}
+
+.none {
+  display: none;
+}
+
+/* new styles */
+
+.find-counter {
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 30px;
+  top: 200px;
+  margin-top: -60px;
+}
+
+.find-counter .oval {
+  width: 40px;
+  height: 40px;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  transform: rotate(20deg);
+  background-color: azure;
+
+}
+
+.oval.correct {
+  background-color: rgb(14, 249, 81);
+}
+
+.oval.failed {
+  background-color: red;
+}
+
+.oval.unchance {
+  background-color: red;
+}
+
+.usernone {
+  pointer-events: none;
+}
